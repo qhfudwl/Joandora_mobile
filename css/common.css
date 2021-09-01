@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* 초기화 */
+body, h1, h2, h3, h4, h5, h6, p, ul, div {margin: 0; padding: 0;}
+img {border: 0;}
+li {list-style: none;}
+a {text-decoration: none;}
+address, small {font-size: 1em; font-style: normal;}
+.hidden {position: absolute; left: -9999px;}
+/* body */
+body {
+    background: linear-gradient(180deg, #9ccaf0 0%, #fff 100%) no-repeat;
+}
+#wrap {
+    width: 960px; margin: 0 auto; border: 1px solid #e7e7e7;
+    background: #fff;
+}
+/* header */
+/* 이미지를 사용할 때는 최소 1920px 짜리를 사용한다. */
+#mainHeader {height: 279px; background: url(../images/bg_header.png) no-repeat center / cover;}
+#mainHeader h1 {padding: 20px 0 0 20px;}
+#mainHeader h1 a {color: #ffff00; font-size: 50px;}
+/* main menu */
+#mainNav {height: 60px;}
+#mainNav ul {}
+#mainNav ul li {width: 25%; float: left;}
+#mainNav ul li a {
+    display: block; line-height: 60px;
+    text-align: center;
+    color: #fff; background: #060;
+}
+#mainNav ul li a:hover {background: #ffff00; color: #000;}
+/* 본문 */
+main {width: 740px; float: left;}
+#content {padding: 30px 20px;}
+#content h3 {margin: 20px 0;}
+#content p {margin-bottom: 10px; font-size: 14px;}
+/* 사진모음 */
+#sidebar {
+    width: 220px; float: right; background: #ddffdd;
+    text-align: center; padding: 20px 0;
+}
+#sidebar img {border: 1px solid #e7e7e7;}
+/* 푸터 */
+#footer {
+    clear: both; background: #061f1f; color: #fff;
+    text-align: center; padding: 20px 0;
+}
+/* 미디어 쿼리 */
+/* 600 - 1023 */
+/* min-width: 600px 을 없애니까 안의 내용이 상속이 된다 */
+@media all and (max-width: 1023px) {
+    #wrap {width: 580px;}
+/*
+    auto는 자동으로 부모의 너비를 가져온다.
+    되도록 auto로 사용하자
+    padding을 적용할 경우
+    100% - width = 100% + 30px + 30px
+    -> 100%에 추가로 60px 이 더해진다.
+    auto - width = 100% = 30px + 30px + auto
+    -> 60px을 포함해서 총 100%가 된다.
+*/
+    main {width: auto; float: none; padding: 0 30px;}
+    #content {}
+    #sidebar {float: none; width: 100%;}
+    #sidebar img {width: 180px;}
+}
+/* 599 이하 */
+@media all and (max-width: 599px) {
+    body {background: none;}
+    #wrap {width: 100%; margin: 0; border: 0;}
+    #mainHeader {background: #061f1f; height: 75px;}
+    #mainHeader h1 {padding: 10px 0 0 10px;}
+    #mainHeader h1 a {font-size: 30px;}
+
+    #mainNav {height: auto; padding: 14px 20px;}
+    #mainNav ul li {width: auto; float: none; margin-bottom: 10px;}
+    #mainNav ul li a {
+        line-height: 39px;
+        background: #fff; color: purple;
+        border: 1px solid #e7e7e7;
+        border-radius: 9px;
+    }
+
+    #sidebar img {width: 90%;}
+}
