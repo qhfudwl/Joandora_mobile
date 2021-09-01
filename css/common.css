@@ -49,7 +49,8 @@ main {width: 740px; float: left;}
 /* 600 - 1023 */
 /* min-width: 600px 을 없애니까 안의 내용이 상속이 된다 */
 @media all and (max-width: 1023px) {
-    #wrap {width: 580px;}
+    /* border가 들어가서 아래에 스크롤바가 생긴다 */
+    #wrap {width: 100%; border: 0; margin: 0;}
 /*
     auto는 자동으로 부모의 너비를 가져온다.
     되도록 auto로 사용하자
@@ -67,7 +68,7 @@ main {width: 740px; float: left;}
 /* 599 이하 */
 @media all and (max-width: 599px) {
     body {background: none;}
-    #wrap {width: 100%; margin: 0; border: 0;}
+    /* #wrap {width: 100%; margin: 0; border: 0;} */
     #mainHeader {background: #061f1f; height: 75px;}
     #mainHeader h1 {padding: 10px 0 0 10px;}
     #mainHeader h1 a {font-size: 30px;}
